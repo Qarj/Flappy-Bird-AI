@@ -62,7 +62,7 @@ function setup() {
 
   pauseBecauseDead = false;
 
-  population = new Population(10);
+  population = new Population(50);
   humanPlayer = new Player();
 }
 
