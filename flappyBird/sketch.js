@@ -71,7 +71,7 @@ function draw() {
   drawToScreen();
   if (showBestEachGen) { //show the best of each gen
     showBestPlayersForEachGeneration();
-  } else if (humanPlaying) { //if the user is controling the ship[
+  } else if (humanPlaying) { //if the user is controlling the ship[
     showHumanPlaying();
   } else if (runBest) { // if replaying the best ever game
     showBestEverPlayer();
@@ -105,12 +105,12 @@ function showBestPlayersForEachGeneration() {
 }
 //-----------------------------------------------------------------------------------
 function showHumanPlaying() {
-  if (!humanPlayer.dead) { //if the player isnt dead then move and show the player based on input
+  if (!humanPlayer.dead) { //if the player isn't dead then move and show the player based on input
     humanPlayer.look();
     humanPlayer.update();
     humanPlayer.show();
-  } else { //once done return to ai
-    humanPlaying = false;
+  } else { //once done allow to play again
+    humanPlayer = new Player();
   }
 }
 //-----------------------------------------------------------------------------------
@@ -235,7 +235,7 @@ function keyPressed() {
       break;
     case 'P': //play
       humanPlaying = !humanPlaying;
-      humanPlayer = new Player();
+      if (humanPlaying) humanPlayer = new Player();
       break;
   }
   //any of the arrow keys
